@@ -1,2 +1,2 @@
-# ofertas-paineiras
-Página de ofertas do Supermercado Paineiras
+# supermercado-paineiras
+Página de informação do Supermercado Paineiras
