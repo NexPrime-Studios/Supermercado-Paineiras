@@ -1,0 +1,677 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>Supermercado Paineiras | Links</title>
+
+  <meta
+    name="description"
+    content="Acesse o grupo de ofertas, WhatsApp, Instagram e localização do Supermercado Paineiras."
+  >
+
+  <meta name="theme-color" content="#d71920">
+
+  <style>
+    :root {
+      --red: #e31e2f;
+      --red-dark: #b70f1d;
+      --yellow: #ffd83d;
+      --green: #20bd5a;
+      --white: #ffffff;
+      --text: #252525;
+      --muted: #777777;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100dvh;
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      background: #ededed;
+      color: var(--text);
+    }
+
+    /* =========================
+       PÁGINA
+    ========================= */
+
+    .page {
+      position: relative;
+
+      width: min(100%, 480px);
+      min-height: 100dvh;
+
+      margin: 0 auto;
+
+      padding:
+        max(35px, env(safe-area-inset-top))
+        22px
+        max(30px, env(safe-area-inset-bottom));
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 50% -10%,
+          rgba(255,255,255,.24),
+          transparent 30%
+        ),
+        linear-gradient(
+          160deg,
+          #f22c3c 0%,
+          var(--red) 48%,
+          var(--red-dark) 100%
+        );
+
+      box-shadow: 0 0 50px rgba(0,0,0,.12);
+    }
+
+    .page::before,
+    .page::after {
+      content: "";
+      position: absolute;
+
+      border-radius: 50%;
+
+      background: rgba(255,255,255,.05);
+
+      pointer-events: none;
+    }
+
+    .page::before {
+      width: 320px;
+      height: 320px;
+
+      top: -190px;
+      right: -170px;
+    }
+
+    .page::after {
+      width: 270px;
+      height: 270px;
+
+      left: -170px;
+      bottom: -100px;
+    }
+
+    /* =========================
+       CONTEÚDO
+    ========================= */
+
+    .content {
+      position: relative;
+      z-index: 2;
+
+      width: 100%;
+      max-width: 390px;
+
+      margin: 0 auto;
+
+      text-align: center;
+    }
+
+    /* =========================
+       LOGO
+    ========================= */
+
+    .logo-box {
+      width: 100px;
+      height: 100px;
+
+      margin: 0 auto 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: white;
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,.18),
+        0 0 0 5px rgba(255,255,255,.12);
+    }
+
+    .logo {
+      width: 76px;
+      height: 76px;
+
+      object-fit: contain;
+    }
+
+    /* =========================
+       NOME
+    ========================= */
+
+    .market-small {
+      margin: 0 0 3px;
+
+      color: rgba(255,255,255,.78);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: 2.6px;
+
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+
+      color: white;
+
+      font-size: 30px;
+      font-weight: 900;
+
+      line-height: 1;
+
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      max-width: 310px;
+
+      margin: 11px auto 28px;
+
+      color: rgba(255,255,255,.86);
+
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    /* =========================
+       LINKS
+    ========================= */
+
+    .links {
+      display: flex;
+      flex-direction: column;
+
+      gap: 13px;
+    }
+
+    .link-button {
+      position: relative;
+
+      width: 100%;
+      min-height: 76px;
+
+      display: flex;
+      align-items: center;
+
+      padding: 11px 48px 11px 12px;
+
+      border-radius: 20px;
+
+      background: white;
+
+      color: var(--text);
+
+      text-decoration: none;
+
+      box-shadow:
+        0 9px 22px rgba(75,0,0,.15);
+
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .link-button:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 13px 27px rgba(75,0,0,.20);
+    }
+
+    .link-button:active {
+      transform: scale(.98);
+    }
+
+    /* =========================
+       ÍCONES
+    ========================= */
+
+    .icon-box {
+      width: 53px;
+      height: 53px;
+
+      flex: 0 0 53px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 15px;
+
+      margin-right: 14px;
+
+      font-size: 25px;
+    }
+
+    .offers .icon-box {
+      background: #fff0c8;
+    }
+
+    .whatsapp .icon-box {
+      background: #dcf8e6;
+    }
+
+    .instagram .icon-box {
+      background: #f9e1f0;
+    }
+
+    .location .icon-box {
+      background: #e6efff;
+    }
+
+    /* =========================
+       TEXTO DOS BOTÕES
+    ========================= */
+
+    .button-text {
+      min-width: 0;
+
+      text-align: left;
+    }
+
+    .button-text strong {
+      display: block;
+
+      margin-bottom: 3px;
+
+      font-size: 15px;
+      font-weight: 850;
+    }
+
+    .button-text span {
+      display: block;
+
+      color: var(--muted);
+
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    /* =========================
+       SETA
+    ========================= */
+
+    .arrow {
+      position: absolute;
+
+      right: 19px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: #b0b0b0;
+
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    /* =========================
+       DESTAQUE GRUPO
+    ========================= */
+
+    .offers {
+      border: 2px solid var(--yellow);
+
+      box-shadow:
+        0 9px 22px rgba(75,0,0,.17),
+        0 0 0 3px rgba(255,216,61,.10);
+    }
+
+    .offers::before {
+      content: "OFERTAS";
+
+      position: absolute;
+
+      top: -8px;
+      right: 16px;
+
+      padding: 4px 8px;
+
+      border-radius: 999px;
+
+      background: var(--yellow);
+
+      color: #7c5700;
+
+      font-size: 8px;
+      font-weight: 900;
+
+      letter-spacing: .7px;
+    }
+
+    /* =========================
+       RODAPÉ
+    ========================= */
+
+    .footer {
+      margin-top: 28px;
+
+      color: rgba(255,255,255,.72);
+
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .footer strong {
+      color: white;
+    }
+
+    /* =========================
+       DESKTOP
+    ========================= */
+
+    @media (min-width: 481px) {
+
+      body {
+        padding: 20px 0;
+      }
+
+      .page {
+        min-height: calc(100dvh - 40px);
+
+        border-radius: 28px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <div class="content">
+
+      <!-- LOGO -->
+
+      <div class="logo-box">
+
+        <img
+          src="logo.png"
+          alt="Logo do Supermercado Paineiras"
+          class="logo"
+        >
+
+      </div>
+
+
+      <!-- CABEÇALHO -->
+
+      <p class="market-small">
+        Supermercado
+      </p>
+
+      <h1>
+        Paineiras
+      </h1>
+
+      <p class="subtitle">
+        Tudo o que você precisa em um só lugar.
+        Acesse nossos canais abaixo.
+      </p>
+
+
+      <!-- LINKS -->
+
+      <div class="links">
+
+
+        <!-- GRUPO DE OFERTAS -->
+
+        <a
+          class="link-button offers"
+          id="grupo-ofertas"
+          href="https://chat.whatsapp.com/DdbEySF0wq5I4gynSdXYmL"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="icon-box">
+            🔥
+          </div>
+
+          <div class="button-text">
+
+            <strong>
+              Grupo de Ofertas
+            </strong>
+
+            <span>
+              Receba nossas promoções no WhatsApp
+            </span>
+
+          </div>
+
+          <span class="arrow">
+            ›
+          </span>
+
+        </a>
+
+
+        <!-- ATENDIMENTO WHATSAPP -->
+
+        <a
+          class="link-button whatsapp"
+          id="atendimento-whatsapp"
+          href="https://wa.me/556492684577"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="icon-box">
+            💬
+          </div>
+
+          <div class="button-text">
+
+            <strong>
+              Atendimento WhatsApp
+            </strong>
+
+            <span>
+              Fale com nossa equipe
+            </span>
+
+          </div>
+
+          <span class="arrow">
+            ›
+          </span>
+
+        </a>
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+          class="link-button instagram"
+          id="instagram"
+          href="https://www.instagram.com/supermercadopaineiras/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="icon-box">
+            📸
+          </div>
+
+          <div class="button-text">
+
+            <strong>
+              Instagram
+            </strong>
+
+            <span>
+              @supermercadopaineiras
+            </span>
+
+          </div>
+
+          <span class="arrow">
+            ›
+          </span>
+
+        </a>
+
+
+        <!-- LOCALIZAÇÃO -->
+
+        <a
+          class="link-button location"
+          id="localizacao"
+          href="https://maps.app.goo.gl/R3gnMHcqmCxqKqyr5"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="icon-box">
+            📍
+          </div>
+
+          <div class="button-text">
+
+            <strong>
+              Nossa Localização
+            </strong>
+
+            <span>
+              Veja como chegar até o supermercado
+            </span>
+
+          </div>
+
+          <span class="arrow">
+            ›
+          </span>
+
+        </a>
+
+      </div>
+
+
+      <!-- RODAPÉ -->
+
+      <div class="footer">
+
+        <strong>
+          Supermercado Paineiras
+        </strong>
+
+        <br>
+
+        Edéia - GO
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <script>
+
+    /*
+      ==========================================
+      RASTREAMENTO DE CLIQUES
+
+      Já deixei preparado para futuramente
+      utilizarmos com o Meta Pixel.
+      ==========================================
+    */
+
+    function registrarClique(nome) {
+
+      if (typeof fbq === "function") {
+
+        fbq(
+          "trackCustom",
+          nome
+        );
+
+      }
+
+    }
+
+
+    document
+      .getElementById("grupo-ofertas")
+      .addEventListener("click", function() {
+
+        registrarClique(
+          "CliqueGrupoOfertas"
+        );
+
+      });
+
+
+    document
+      .getElementById("atendimento-whatsapp")
+      .addEventListener("click", function() {
+
+        registrarClique(
+          "CliqueAtendimentoWhatsApp"
+        );
+
+      });
+
+
+    document
+      .getElementById("instagram")
+      .addEventListener("click", function() {
+
+        registrarClique(
+          "CliqueInstagram"
+        );
+
+      });
+
+
+    document
+      .getElementById("localizacao")
+      .addEventListener("click", function() {
+
+        registrarClique(
+          "CliqueLocalizacao"
+        );
+
+      });
+
+  </script>
+
+</body>
+</html>
+```
