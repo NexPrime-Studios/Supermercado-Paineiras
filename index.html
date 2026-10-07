@@ -16,28 +16,31 @@
     content="Acesse o grupo de ofertas, WhatsApp, Instagram e localização do Supermercado Paineiras."
   >
 
-  <meta name="theme-color" content="#d71920">
+  <meta name="theme-color" content="#e31e2f">
 
   <style>
+
     :root {
       --red: #e31e2f;
       --red-dark: #b70f1d;
       --yellow: #ffd83d;
-      --green: #20bd5a;
       --white: #ffffff;
       --text: #252525;
       --muted: #777777;
     }
 
+
     * {
       box-sizing: border-box;
     }
+
 
     html,
     body {
       margin: 0;
       min-height: 100%;
     }
+
 
     body {
       min-height: 100dvh;
@@ -49,9 +52,11 @@
         "Segoe UI",
         sans-serif;
 
-      background: #ededed;
+      background: var(--red);
+
       color: var(--text);
     }
+
 
     /* =========================
        PÁGINA
@@ -60,37 +65,37 @@
     .page {
       position: relative;
 
-      width: min(100%, 480px);
+      width: 100%;
       min-height: 100dvh;
 
-      margin: 0 auto;
-
       padding:
-        max(35px, env(safe-area-inset-top))
+        max(40px, env(safe-area-inset-top))
         22px
-        max(30px, env(safe-area-inset-bottom));
+        max(35px, env(safe-area-inset-bottom));
 
       overflow: hidden;
 
       background:
         radial-gradient(
           circle at 50% -10%,
-          rgba(255,255,255,.24),
-          transparent 30%
+          rgba(255,255,255,.20),
+          transparent 32%
         ),
         linear-gradient(
           160deg,
-          #f22c3c 0%,
+          #f32f40 0%,
           var(--red) 48%,
           var(--red-dark) 100%
         );
-
-      box-shadow: 0 0 50px rgba(0,0,0,.12);
     }
+
+
+    /* DECORAÇÕES DO FUNDO */
 
     .page::before,
     .page::after {
       content: "";
+
       position: absolute;
 
       border-radius: 50%;
@@ -100,21 +105,24 @@
       pointer-events: none;
     }
 
-    .page::before {
-      width: 320px;
-      height: 320px;
 
-      top: -190px;
-      right: -170px;
+    .page::before {
+      width: 420px;
+      height: 420px;
+
+      top: -240px;
+      right: -190px;
     }
+
 
     .page::after {
-      width: 270px;
-      height: 270px;
+      width: 350px;
+      height: 350px;
 
-      left: -170px;
-      bottom: -100px;
+      left: -210px;
+      bottom: -150px;
     }
+
 
     /* =========================
        CONTEÚDO
@@ -122,27 +130,30 @@
 
     .content {
       position: relative;
+
       z-index: 2;
 
       width: 100%;
-      max-width: 390px;
+      max-width: 410px;
 
       margin: 0 auto;
 
       text-align: center;
     }
 
+
     /* =========================
        LOGO
     ========================= */
 
     .logo-box {
-      width: 100px;
-      height: 100px;
+      width: 104px;
+      height: 104px;
 
       margin: 0 auto 18px;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
@@ -155,21 +166,23 @@
         0 0 0 5px rgba(255,255,255,.12);
     }
 
+
     .logo {
-      width: 76px;
-      height: 76px;
+      width: 78px;
+      height: 78px;
 
       object-fit: contain;
     }
+
 
     /* =========================
        NOME
     ========================= */
 
     .market-small {
-      margin: 0 0 3px;
+      margin: 0 0 4px;
 
-      color: rgba(255,255,255,.78);
+      color: rgba(255,255,255,.80);
 
       font-size: 11px;
       font-weight: 800;
@@ -179,12 +192,13 @@
       text-transform: uppercase;
     }
 
+
     h1 {
       margin: 0;
 
       color: white;
 
-      font-size: 30px;
+      font-size: 31px;
       font-weight: 900;
 
       line-height: 1;
@@ -192,16 +206,19 @@
       letter-spacing: -1px;
     }
 
+
     .subtitle {
-      max-width: 310px;
+      max-width: 320px;
 
-      margin: 11px auto 28px;
+      margin: 12px auto 30px;
 
-      color: rgba(255,255,255,.86);
+      color: rgba(255,255,255,.88);
 
       font-size: 14px;
+
       line-height: 1.45;
     }
+
 
     /* =========================
        LINKS
@@ -209,10 +226,12 @@
 
     .links {
       display: flex;
+
       flex-direction: column;
 
       gap: 13px;
     }
+
 
     .link-button {
       position: relative;
@@ -221,9 +240,14 @@
       min-height: 76px;
 
       display: flex;
+
       align-items: center;
 
-      padding: 11px 48px 11px 12px;
+      padding:
+        11px
+        48px
+        11px
+        12px;
 
       border-radius: 20px;
 
@@ -240,8 +264,10 @@
         transform .15s ease,
         box-shadow .15s ease;
 
-      -webkit-tap-highlight-color: transparent;
+      -webkit-tap-highlight-color:
+        transparent;
     }
+
 
     .link-button:hover {
       transform: translateY(-2px);
@@ -250,9 +276,11 @@
         0 13px 27px rgba(75,0,0,.20);
     }
 
+
     .link-button:active {
       transform: scale(.98);
     }
+
 
     /* =========================
        ÍCONES
@@ -265,6 +293,7 @@
       flex: 0 0 53px;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
@@ -275,21 +304,26 @@
       font-size: 25px;
     }
 
+
     .offers .icon-box {
       background: #fff0c8;
     }
+
 
     .whatsapp .icon-box {
       background: #dcf8e6;
     }
 
+
     .instagram .icon-box {
       background: #f9e1f0;
     }
 
+
     .location .icon-box {
       background: #e6efff;
     }
+
 
     /* =========================
        TEXTO DOS BOTÕES
@@ -301,14 +335,17 @@
       text-align: left;
     }
 
+
     .button-text strong {
       display: block;
 
       margin-bottom: 3px;
 
       font-size: 15px;
+
       font-weight: 850;
     }
+
 
     .button-text span {
       display: block;
@@ -316,8 +353,10 @@
       color: var(--muted);
 
       font-size: 12px;
+
       line-height: 1.25;
     }
+
 
     /* =========================
        SETA
@@ -327,6 +366,7 @@
       position: absolute;
 
       right: 19px;
+
       top: 50%;
 
       transform: translateY(-50%);
@@ -334,8 +374,10 @@
       color: #b0b0b0;
 
       font-size: 25px;
+
       font-weight: 400;
     }
+
 
     /* =========================
        DESTAQUE GRUPO
@@ -348,6 +390,7 @@
         0 9px 22px rgba(75,0,0,.17),
         0 0 0 3px rgba(255,216,61,.10);
     }
+
 
     .offers::before {
       content: "OFERTAS";
@@ -371,50 +414,89 @@
       letter-spacing: .7px;
     }
 
+
     /* =========================
        RODAPÉ
     ========================= */
 
     .footer {
-      margin-top: 28px;
+      margin-top: 30px;
 
       color: rgba(255,255,255,.72);
 
       font-size: 11px;
+
       line-height: 1.6;
     }
+
 
     .footer strong {
       color: white;
     }
 
+
     /* =========================
-       DESKTOP
+       CELULARES PEQUENOS
     ========================= */
 
-    @media (min-width: 481px) {
-
-      body {
-        padding: 20px 0;
-      }
+    @media (max-width: 380px) {
 
       .page {
-        min-height: calc(100dvh - 40px);
-
-        border-radius: 28px;
+        padding-left: 15px;
+        padding-right: 15px;
       }
+
+
+      .logo-box {
+        width: 90px;
+        height: 90px;
+      }
+
+
+      .logo {
+        width: 68px;
+        height: 68px;
+      }
+
+
+      h1 {
+        font-size: 28px;
+      }
+
+
+      .link-button {
+        min-height: 72px;
+      }
+
+
+      .icon-box {
+        width: 49px;
+        height: 49px;
+
+        flex-basis: 49px;
+
+        margin-right: 11px;
+      }
+
     }
 
   </style>
+
 </head>
+
 
 <body>
 
+
   <main class="page">
+
 
     <div class="content">
 
-      <!-- LOGO -->
+
+      <!-- =========================
+           LOGO
+      ========================== -->
 
       <div class="logo-box">
 
@@ -427,15 +509,19 @@
       </div>
 
 
-      <!-- CABEÇALHO -->
+      <!-- =========================
+           CABEÇALHO
+      ========================== -->
 
       <p class="market-small">
         Supermercado
       </p>
 
+
       <h1>
         Paineiras
       </h1>
+
 
       <p class="subtitle">
         Tudo o que você precisa em um só lugar.
@@ -443,7 +529,9 @@
       </p>
 
 
-      <!-- LINKS -->
+      <!-- =========================
+           LINKS
+      ========================== -->
 
       <div class="links">
 
@@ -462,6 +550,7 @@
             🔥
           </div>
 
+
           <div class="button-text">
 
             <strong>
@@ -473,6 +562,7 @@
             </span>
 
           </div>
+
 
           <span class="arrow">
             ›
@@ -495,6 +585,7 @@
             💬
           </div>
 
+
           <div class="button-text">
 
             <strong>
@@ -506,6 +597,7 @@
             </span>
 
           </div>
+
 
           <span class="arrow">
             ›
@@ -528,6 +620,7 @@
             📸
           </div>
 
+
           <div class="button-text">
 
             <strong>
@@ -539,6 +632,7 @@
             </span>
 
           </div>
+
 
           <span class="arrow">
             ›
@@ -561,6 +655,7 @@
             📍
           </div>
 
+
           <div class="button-text">
 
             <strong>
@@ -573,16 +668,20 @@
 
           </div>
 
+
           <span class="arrow">
             ›
           </span>
 
         </a>
 
+
       </div>
 
 
-      <!-- RODAPÉ -->
+      <!-- =========================
+           RODAPÉ
+      ========================== -->
 
       <div class="footer">
 
@@ -596,7 +695,9 @@
 
       </div>
 
+
     </div>
+
 
   </main>
 
@@ -606,11 +707,10 @@
     /*
       ==========================================
       RASTREAMENTO DE CLIQUES
-
-      Já deixei preparado para futuramente
-      utilizarmos com o Meta Pixel.
+      Preparado para o Meta Pixel
       ==========================================
     */
+
 
     function registrarClique(nome) {
 
@@ -671,6 +771,7 @@
 
   </script>
 
-</body>
-</html>
 
+</body>
+
+</html>
